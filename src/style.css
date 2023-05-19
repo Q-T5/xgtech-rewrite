@@ -3,7 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.router-link-active {
-  @apply bg-yellow-500/70 border-l-8 border-l-yellow-600 inset-2;
-}
