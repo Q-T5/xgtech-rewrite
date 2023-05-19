@@ -4,6 +4,8 @@ import GamesView from "../views/GamesView.vue";
 import ProductsView from "../views/ProductsView.vue";
 import ServicesView from "../views/ServicesView.vue";
 import ContactUsView from "../views/ContactUsView.vue";
+import AboutUsView from "../views/AboutUsView.vue";
+import GamingComputersView from "../views/GamingComputersView.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -12,6 +14,11 @@ const router = createRouter({
 			path: "/xgtech-rewrite/",
 			component: HomeView,
 			name: "HomeView",
+		},
+		{
+			path: "/xgtech-rewrite/gaming-computers/",
+			component: GamingComputersView,
+			name: "GamingComputersView",
 		},
 		{
 			path: "/xgtech-rewrite/games/",
@@ -32,6 +39,11 @@ const router = createRouter({
 			path: "/xgtech-rewrite/contact-us/",
 			component: ContactUsView,
 			name: "ContactView",
+		},
+		{
+			path: "/xgtech-rewrite/about-us/",
+			component: AboutUsView,
+			name: "AboutUsView",
 		},
 	],
 });
