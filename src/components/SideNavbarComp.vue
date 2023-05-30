@@ -1,8 +1,8 @@
 <template>
 	<nav class="w-1/5 justify-between flex flex-col h-screen overflow-y-scroll">
-		<div class="flex flex-col items-center mt-2">
+		<div class="flex flex-col items-center mt-20">
 			<img
-				src="../assets/xgamer-logo.svg"
+				src="../assets/xgamer-logoB.svg"
 				alt="app-logo"
 				class="w-32" />
 			<div class="text-center">
