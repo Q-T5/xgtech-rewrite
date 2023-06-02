@@ -1,5 +1,5 @@
 <template>
-  <nav class="p-2 flex border-b-primary fixed top-0 w-full shadow-md border-b-[0.5px] items-center justify-between">
+  <nav class="p-2 z-10 backdrop-blur-lg flex border-b-primary fixed top-0 w-full shadow-md border-b-[0.5px] items-center justify-between">
     <div class="flex">
       <img
         src="../assets/xgamer-logoB.svg"
@@ -28,7 +28,7 @@ import { ref } from 'vue';
    import { useRoute } from 'vue-router';
 
    export default {
-    name: "SideNavbarComp",
+    name: "TopNavbarComp",
     setup() {
       const navigationItems = ref([
         { linkText: "Home", linkName: "HomeView"  },
