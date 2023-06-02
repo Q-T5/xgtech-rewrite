@@ -1,5 +1,5 @@
 <template>
-  <SideNavbarComp />
+  <TopNavbarComp />
   <main class="relative mt-10">
     <router-view v-slot="{ Component }">
       <keep-alive>
@@ -31,13 +31,13 @@ html {
 
 <script>
 import { RouterView } from 'vue-router';
-import SideNavbarComp from './components/SideNavbarComp.vue';
+import TopNavbarComp from './components/TopNavbarComp.vue';
 import { useTheme } from 'vuetify';
 
 export default {
   name: 'App',
   components: {
-    SideNavbarComp,
+    TopNavbarComp,
     RouterView,
   },
   setup() {
