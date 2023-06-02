@@ -1,8 +1,9 @@
 <template>
   <TopInfoBarComp title="Contact Us & Location" />
-  <div class="flex justify-center divide-x-2 m-4 rounded-md shadow-md p-2">
+  <div class="flex justify-center space-x-2 m-4">
     <ContactUsFormComp />
-    <div class="w-1/2 p-2">
+    <div
+      class="w-1/2 p-2 rounded-md shadow-md flex flex-col justify-center border-[0.5px]">
       <h1 class="font-ubuntu text-lg">Please Note</h1>
       <ul>
         <li
@@ -11,11 +12,22 @@
           <v-icon icon="mdi-circle-small" />{{ line }}
         </li>
       </ul>
+      <h1 class="font-ubuntu text-lg">Support</h1>
+      <p class="font-nunito p-1">
+        We would love to hear from you! For any questions, assistance, comments,
+        compliments or complaints call us or write us a message through any of
+        the channels
+        <a
+          href="#sm-links"
+          class="underline underline-offset-2 hover:text-primary"
+          >below</a
+        >
+        and we'll try to get back to you as soon as possible...
+      </p>
     </div>
   </div>
-  <div class="m-2 rounded-md shadow-md">
-    <h1
-      class="p-2 font-ubuntu text-xl border-b-2 border-b-primary bg-background">
+  <div class="rounded-md shadow-md m-4 border-[0.5px]">
+    <h1 class="p-2 font-ubuntu text-xl border-b-2 border-b-primary">
       Our Location
     </h1>
     <iframe
@@ -36,21 +48,21 @@ import ContactUsFooterComp from '../components/ContactUsFooterComp.vue';
 import { ref } from 'vue';
 
 export default {
-    name: "ContactUsView",
+  name: "ContactUsView",
 	components: {
 		TopInfoBarComp, ContactUsFormComp, ContactUsFooterComp
 	},
-    setup() {
-		const noticeLines = ref([
-			"Refer to prices provided on this site.",
-			"Clarifications are quick if you call us on +254 786 178372 or +254 726 178372 any day 8 A.M-8 P.M.",
-			"We do respond on Whatsapp and SMS as well.",
-			"Other means like Facebook, Twitter, Emails, Instagram are also available but may not be quick or accurate as the first 3 means."
-		]);
+  setup() {
+    const noticeLines = ref([
+      "Refer to prices provided on this site.",
+      "Clarifications are quick if you call us on +254 786 178372 or +254 726 178372 any day 8 A.M-8 P.M.",
+      "We do respond on Whatsapp and SMS as well.",
+      "Other means like Facebook, Twitter, Emails, Instagram are also available but may not be quick or accurate as the first 3 means."
+    ]);
 
-		return {
-			noticeLines
-		}
+    return {
+      noticeLines
     }
+  }
 }
 </script>
