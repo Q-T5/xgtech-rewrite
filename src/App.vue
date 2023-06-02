@@ -1,6 +1,6 @@
 <template>
   <SideNavbarComp />
-  <main class="w-4/5 relative h-screen overflow-y-scroll">
+  <main class="relative mt-10">
     <router-view v-slot="{ Component }">
       <keep-alive>
         <component :is="Component" />
@@ -25,7 +25,7 @@
 
 <style>
 html {
-  overflow: hidden !important;
+  overflow: auto !important;
 }
 </style>
 
