@@ -1,6 +1,6 @@
 <template>
   <TopNavbarComp />
-  <main class="relative mt-12">
+  <main class="relative">
     <router-view v-slot="{ Component }">
       <keep-alive>
         <component :is="Component" />
