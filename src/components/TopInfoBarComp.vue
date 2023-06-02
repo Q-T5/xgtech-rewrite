@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 shadow-sm">
+  <div class="p-2">
     <h1 class="font-ubuntu text-3xl">{{ title }}</h1>
   </div>
 </template>
