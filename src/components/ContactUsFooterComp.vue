@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 p-2 border-t-[1px] mt-2 divide-x-1">
+  <div class="grid grid-cols-2 p-2 border-t-[1px] mt-2 divide-x-2">
     <div class="p-2">
       <h1 class="font-ubuntu text-lg">XGAMERTechnologies</h1>
       <h2 class="font-nunito">PHONE: +254 786 178372 or +254 726 178372</h2>
@@ -14,7 +14,7 @@
         v-for="(link, index) in popularSiteLinks"
         :key="index"
         :href="link.link"
-        class="font-nunito hover:underline underline-offset-2 text-info"
+        class="font-nunito hover:underline underline-offset-2 text-blue-500"
         >{{ link.text }}</a
       >
     </div>
