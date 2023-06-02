@@ -8,6 +8,7 @@
         variant="underlined"
         hint="For Example johndoe@gmail.com"
         prepend-icon="mdi-mailbox"
+        class="font-nunito"
         required></v-text-field>
       <v-text-field
         v-model="contactDetails.subject"
@@ -15,6 +16,7 @@
         label="Mail Subject"
         variant="underlined"
         :clearable="true"
+        class="font-nunito"
         prepend-icon="mdi-information-outline"
         required></v-text-field>
       <v-text-field
@@ -23,6 +25,7 @@
         label="Phone Number"
         variant="underlined"
         hint="Format 07...."
+        class="font-nunito"
         prepend-icon="mdi-phone"
         required></v-text-field>
       <v-textarea
@@ -30,9 +33,10 @@
         label="Your Message"
         variant="underlined"
         prepend-icon="mdi-message"
+        class="font-nunito"
         :model-value="contactDetails.message"></v-textarea>
       <v-btn
-        class="w-full"
+        class="w-full font-nunito"
         append-icon="mdi-send"
         elevation="0"
         >Send Email</v-btn
