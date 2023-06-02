@@ -1,5 +1,5 @@
 <template>
-  <nav class="p-2 z-10 backdrop-blur-lg flex border-b-primary fixed top-0 w-full shadow-md border-b-[0.5px] items-center justify-between">
+  <nav class="p-2 z-10 bg-surface flex border-b-primary fixed top-0 w-full shadow-md border-b-[0.5px] items-center justify-between">
     <div class="flex">
       <img
         src="../assets/xgamer-logoB.svg"
@@ -16,7 +16,7 @@
         :key="index"
         :to="{ name: item.linkName }"
         class="p-2 text-center font-nunito mx-0.5"
-        :class="route.name === item.linkName ? 'bg-primary' : ''">
+        :class="route.name === item.linkName ? 'bg-primary rounded-md' : ''">
         {{ item.linkText }}
       </router-link>
     </div>
