@@ -1,12 +1,16 @@
 <template>
-	<h1>Welcome to Games</h1>
+  <ProductDisplayComp />
 </template>
 
 <script lang="js">
-	export default {
-	    name: "GamesView",
-	    setup() {
+import ProductDisplayComp from '../components/ProductDisplayComp.vue';
+export default {
+    name: "GamesView",
+	components: {
+		ProductDisplayComp
+	},
+    setup() {
 
-	    }
-	}
+    }
+}
 </script>
