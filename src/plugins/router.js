@@ -45,6 +45,38 @@ const router = createRouter({
       component: AboutUsView,
       name: 'AboutUsView',
     },
+
+    // lazy-loaded components
+    {
+      path: '/xgtech-rewrite/customer-reward-scheme/',
+      component: () => import('../views/miscviews/CustRewardSchemeView.vue'),
+      name: 'CustomerRewardScheme',
+    },
+    {
+      path: '/xgtech-rewrite/frequently-asked-questions/',
+      component: () => import('../views/miscviews/FAQView.vue'),
+      name: 'FAQ',
+    },
+    {
+      path: '/xgtech-rewrite/charity-work/',
+      component: () => import('../views/miscviews/CharityWorkView.vue'),
+      name: 'CharityWork',
+    },
+    {
+      path: '/xgtech-rewrite/careers/',
+      component: () => import('../views/miscviews/CareersView.vue'),
+      name: 'Careers',
+    },
+    {
+      path: '/xgtech-rewrite/customer-portal/',
+      component: () => import('../views/miscviews/CustomerPortalView.vue'),
+      name: 'CustomerPortal',
+    },
+    {
+      path: '/xgtech-rewrite/policy/',
+      component: () => import('../views/miscviews/PolicyView.vue'),
+      name: 'Policy',
+    },
   ],
 });
 
