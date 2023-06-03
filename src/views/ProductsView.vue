@@ -1,10 +1,15 @@
 <template>
-  <h1>Welcome to products</h1>
+  <UnderConstruction />
 </template>
 
 <script lang="js">
+import UnderConstruction from '../utils/UnderConstruction.vue';
+
 export default {
     name: "ProductsView",
+    components: {
+      UnderConstruction
+    },
     setup() {
 
     }
