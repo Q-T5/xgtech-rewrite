@@ -21,6 +21,9 @@
       density="default"
       icon="mdi-cart"></v-btn>
   </div>
+  <teleport to="#notification-zone">
+    <NotificationComp v-if="notificationActive" />
+  </teleport>
 </template>
 
 <style>
@@ -33,15 +36,19 @@ html {
 import { RouterView } from 'vue-router';
 import TopNavbarComp from './components/TopNavbarComp.vue';
 import { useTheme } from 'vuetify';
+import NotificationComp from './components/NotificationComp.vue';
+import useNotificationStore from './stores/notification-store';
 
 export default {
   name: 'App',
   components: {
     TopNavbarComp,
     RouterView,
+    NotificationComp,
   },
   setup() {
     const theme = useTheme();
+    const { notificationActive } = useNotificationStore();
 
     function toggleTheme() {
       if (theme.global.name.value === 'customDark') {
@@ -52,7 +59,7 @@ export default {
     }
 
     return {
-      toggleTheme,
+      toggleTheme, notificationActive
     };
   },
 };
