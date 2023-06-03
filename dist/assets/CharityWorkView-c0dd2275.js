@@ -1,0 +1,1 @@
+import{U as n,_ as t,r as e,o as r,c as s}from"./index-2d122d80.js";const c={name:"Charity Work View",components:{UnderConstruction:n}};function a(i,p,_,d,m,u){const o=e("UnderConstruction");return r(),s(o)}const C=t(c,[["render",a]]);export{C as default};
