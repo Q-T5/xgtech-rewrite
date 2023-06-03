@@ -1,0 +1,1 @@
+import{O as o,_ as t,r as a,o as s,c as n,w as r,a as c}from"./index-198bb8a1.js";const l={name:"CareersView",components:{OptionalSlot:o}},p=c("h1",null,"Careers View",-1);function _(i,d,f,m,u,w){const e=a("OptionalSlot");return s(),n(e,null,{default:r(()=>[p]),_:1})}const h=t(l,[["render",_]]);export{h as default};

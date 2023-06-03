@@ -1,0 +1,1 @@
+import{O as t,_ as e,r as n,o as a,c as s,w as c,a as l}from"./index-198bb8a1.js";const r={name:"FAQView",components:{OptionalSlot:t}},p=l("h1",null,"FAQ View",-1);function _(i,d,f,m,u,w){const o=n("OptionalSlot");return a(),s(o,null,{default:c(()=>[p]),_:1})}const x=e(r,[["render",_]]);export{x as default};

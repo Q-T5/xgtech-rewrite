@@ -1,0 +1,1 @@
+import{O as t,_ as e,r as n,o as a,c as s,w as c,a as l}from"./index-198bb8a1.js";const i={name:"PolicyView",components:{OptionalSlot:t}},r=l("h1",null,"Policy View",-1);function p(_,d,f,m,u,w){const o=n("OptionalSlot");return a(),s(o,null,{default:c(()=>[r]),_:1})}const x=e(i,[["render",p]]);export{x as default};

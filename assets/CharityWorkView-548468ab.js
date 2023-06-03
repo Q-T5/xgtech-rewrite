@@ -1,0 +1,1 @@
+import{O as t,_ as e,r as a,o as n,c as s,w as r,a as c}from"./index-198bb8a1.js";const l={name:"Charity Work View",components:{OptionalSlot:t}},i=c("h1",null,"Charity Work",-1);function p(_,d,f,h,m,u){const o=a("OptionalSlot");return n(),s(o,null,{default:r(()=>[i]),_:1})}const C=e(l,[["render",p]]);export{C as default};
