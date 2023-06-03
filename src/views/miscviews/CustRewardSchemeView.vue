@@ -1,15 +1,14 @@
 <template>
-  <OptionalSlot>
-    <h1>Customer Reward Scheme</h1>
-  </OptionalSlot>
+  <UnderConstruction />
 </template>
 
 <script lang="js">
-import OptionalSlot from "../../utils/OptionalSlot.vue";
+import UnderConstruction from "../../utils/UnderConstruction.vue";
+
 export default {
-    name: "CustRewardSchemeView",
-    components: {
-        OptionalSlot
-    }
+  name: "CustRewardSchemeView",
+  components: {
+    UnderConstruction
+  }
 }
 </script>

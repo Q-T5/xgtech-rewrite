@@ -1,15 +1,14 @@
 <template>
-  <OptionalSlot>
-    <h1>FAQ View</h1>
-  </OptionalSlot>
+  <UnderConstruction />
 </template>
 
 <script lang="js">
-import OptionalSlot from "../../utils/OptionalSlot.vue";
+import UnderConstruction from "../../utils/UnderConstruction.vue";
+
 export default {
   name: "FAQView",
   components: {
-    OptionalSlot
+    UnderConstruction
   }
 }
 </script>
