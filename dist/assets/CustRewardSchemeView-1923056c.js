@@ -1,0 +1,1 @@
+import{O as o,_ as t,r as a,o as s,c as n,w as c,a as r}from"./index-198bb8a1.js";const l={name:"CustRewardSchemeView",components:{OptionalSlot:o}},p=r("h1",null,"Customer Reward Scheme",-1);function _(i,m,d,u,f,h){const e=a("OptionalSlot");return s(),n(e,null,{default:c(()=>[p]),_:1})}const S=t(l,[["render",_]]);export{S as default};
