@@ -44,7 +44,7 @@
                 <p class="text-xs font-nunito ml-2">The Future of All Gaming</p>
               </div>
             </div>
-            <div class="flex flex-col w-full mt-2">
+            <div class="flex flex-col w-full mt-1">
               <router-link
                 v-for="(item, index) in navigationItems"
                 :key="index"
@@ -64,6 +64,14 @@
                 :class="route.name === item.linkName ? 'bg-primary' : ''">
                 {{ item.linkText }}
               </router-link>
+            </div>
+            <div>
+              <v-btn
+                class="w-full"
+                elevation="0"
+                variant="tonal"
+                >Login</v-btn
+              >
             </div>
           </v-navigation-drawer>
         </v-layout>
