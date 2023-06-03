@@ -21,6 +21,8 @@
       density="default"
       icon="mdi-cart"></v-btn>
   </div>
+
+  <!-- Teleported components -->
   <teleport to="#notification-zone">
     <NotificationComp v-if="notificationActive" />
   </teleport>
@@ -59,7 +61,8 @@ export default {
     }
 
     return {
-      toggleTheme, notificationActive
+      toggleTheme,
+      notificationActive,
     };
   },
 };
