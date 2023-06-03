@@ -7,7 +7,7 @@
  -->
 
 <template>
-  <div class="h-fit mt-12">
+  <div class="mt-12">
     <slot></slot>
   </div>
 </template>
