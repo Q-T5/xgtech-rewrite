@@ -7,7 +7,7 @@
         alt="app-logo"
         class="w-10 hover:cursor-pointer"
         @click.prevent="router.push({ name: 'HomeView' })" />
-        <h1 class="font-alice ml-2">XGAMERTechnologies</h1>
+      <h1 class="font-alice ml-2">XGAMERTechnologies</h1>
     </div>
     <div>
       <v-btn
@@ -73,6 +73,7 @@
                   class="w-full"
                   elevation="0"
                   variant="tonal"
+                  @click="openLogin"
                   >Login</v-btn
                 >
               </div>
@@ -90,7 +91,7 @@ import { useRoute, useRouter } from 'vue-router';
 
 export default {
   name: "TopNavbarComp",
-  setup() {
+  setup(props, { emit }) {
     const navigationItems = ref([
       { linkText: "Home", linkName: "HomeView"  },
       { linkText: "Gaming Computers", linkName: "GamingComputersView"  },
@@ -113,8 +114,14 @@ export default {
     const drawer = ref(null);
     const router =  useRouter();
 
+    function openLogin() {
+      // close the navigation drawer first
+      drawer.value = !drawer.value;
+      emit("open-login");
+    }
+
     return {
-      navigationItems, route, drawer, miscRoutes, router
+      navigationItems, route, drawer, miscRoutes, router, openLogin
     }
   }
 }
