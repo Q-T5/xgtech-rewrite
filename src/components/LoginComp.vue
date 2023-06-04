@@ -1,14 +1,12 @@
 <template>
   <div
-    class="h-screen w-full absolute top-0 backdrop-blur-md z-30 backdrop-brightness-50 flex flex-col items-center">
-    <div class="w-full p-4 flex justify-end">
-      <v-btn
-        icon="mdi-close"
-        size="small"
-        elevation="0"
-        @click.stop="closeLoginComp"></v-btn>
-    </div>
-    <div class="w-[40%] h-fit p-4 rounded-md shadow-sm bg-surface">
+    class="p-2 w-full fixed h-screen top-0 backdrop-blur z-30 backdrop-brightness-50 flex flex-col items-center">
+    <div
+      class="w-[40%] h-fit p-4 rounded-md shadow-sm bg-surface mt-32 relative">
+      <img
+        src="../assets/account-login.svg"
+        alt="login-SVG"
+        class="w-24 absolute -top-[3.3rem] left-[40%]" />
       <div class="py-4">
         <h1 class="font-ubuntu text-xl">Login</h1>
       </div>
@@ -33,15 +31,27 @@
           class="font-nunito"
           prepend-icon="mdi-lock"
           required></v-text-field>
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center space-x-2">
           <v-btn
             class="self-center"
             elevation="0"
-            variant="outlined"
+            variant="elevated"
+            color="primary"
             type="submit"
             :loading="loginLoading">
             Login
           </v-btn>
+          <v-btn
+            elevation="0"
+            variant="outlined"
+            @click.stop="closeLoginComp">
+            Cancel
+          </v-btn>
+        </div>
+        <div class="flex justify-center font-nunito mt-2 space-x-2 items-center">
+          <h4 class="hover:underline underline-offset-2 hover:cursor-pointer text-blue-500">Forgot Password</h4>
+          <span class="text-xl">|</span>
+          <h4 class="hover:underline underline-offset-2 hover:cursor-pointer text-blue-500">Have No Account</h4>
         </div>
       </form>
     </div>
