@@ -1,7 +1,8 @@
 <template>
-  <div class="h-fit w-full bg-surface shadow-md rounded-md space-y-2 relative pb-1">
+  <div
+    class="h-fit w-full bg-surface shadow-md rounded-md space-y-2 relative pb-1">
     <img
-      src="https://files.fm/thumb_show.php?i=dgrqyep4s"
+      :src="props.poster"
       alt="product-image"
       class="h-[12rem] w-full object-cover rounded-t-md shadow-md"
       @load="imageLoadingCallback" />
@@ -13,9 +14,9 @@
         color="primary"></v-progress-circular>
     </div>
     <div class="pl-1 rounded-md space-y-1">
-      <h1 class="font-ubuntu text-blue-600 text-xl">Need For Speed</h1>
-      <h2 class="text-sm font-ubuntu">Publisher: EA Sports</h2>
-      <h3 class="text-xs font-nunito">Released: 21-06-2021</h3>
+      <h1 class="font-ubuntu text-blue-600 text-xl">{{ props.title }}</h1>
+      <h2 class="text-sm font-ubuntu">Publisher: {{ props.publisher }}</h2>
+      <h3 class="text-xs font-nunito">Released: {{ props.release }}</h3>
     </div>
     <div class="text-center">
       <v-rating
@@ -43,17 +44,43 @@ import { ref } from 'vue';
 
 export default {
     name: "ProductDisplayComp",
-    setup() {
-      const rating = ref(3.5);
+    props: {
+      title: {
+        required: true,
+        default: "Generic Blog Title",
+        type: String
+      },
+      publisher: {
+        required: true,
+        default: "EA Sports",
+        type: String
+      },
+      release: {
+        required: true,
+        default: "21-06-2001",
+        type: String
+      },
+      rating: {
+        required: true,
+        default: 2.5,
+        type: Number
+      },
+      poster: {
+        required: true,
+        default: "https://files.fm/thumb_show.php?i=dgrqyep4s",
+        type: String
+      }
+    },
+    setup(props) {
+      const rating = ref(props.rating);
       const imageLoading = ref(true);
 
       function  imageLoadingCallback() {
-        console.log("image loaded...");
         imageLoading.value = false;
       }
 
       return {
-        rating, imageLoading, imageLoadingCallback
+        rating, imageLoading, imageLoadingCallback, props
       }
     }
 }
