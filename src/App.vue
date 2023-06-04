@@ -10,11 +10,6 @@
   <div class="fixed bottom-4 right-4 flex flex-col items-center space-y-2">
     <v-btn
       density="default"
-      icon="mdi-lightbulb"
-      size="x-small"
-      @click="toggleTheme"></v-btn>
-    <v-btn
-      density="default"
       icon="mdi-chat"
       size="small"></v-btn>
     <v-btn
