@@ -7,7 +7,7 @@
  -->
 
 <template>
-  <div class="mt-12">
+  <div class="mt-16">
     <slot></slot>
   </div>
 </template>
