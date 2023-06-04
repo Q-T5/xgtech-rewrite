@@ -1,33 +1,60 @@
 <template>
-  <div class="p-1 w-[22%] shadow-md border-[1px] rounded-md space-y-2">
-    <div class="border-[1px] p-1 rounded-md">
-      <h1 class="font-ubuntu">Hello World</h1>
-      <h2 class="text-sm font-ubuntu">Bungee Studios</h2>
-      <h3 class="text-xs font-nunito">21-06-2021</h3>
+  <div class="w-[20%] bg-surface shadow-md rounded-md space-y-2 relative pb-1">
+    <img
+      src="https://files.fm/thumb_show.php?i=dgrqyep4s"
+      alt="product-image"
+      class="h-[10.5rem] w-full object-cover rounded-t-md shadow-md"
+      @load="imageLoadingCallback" />
+    <div
+      class="h-[10.5rem] w-full flex justify-center items-center absolute rounded-t-md shadow-md -top-2"
+      v-if="imageLoading">
+      <v-progress-circular
+        indeterminate
+        color="primary"></v-progress-circular>
     </div>
-    <div class="flex justify-center">
-      <img
-        src="https://files.fm/thumb_show.php?i=3vjhz44sx"
-        alt="product-image"
-        class="h-48 w-28 rounded-md shadow-md" />
+    <div class="pl-1 rounded-md space-y-1">
+      <h1 class="font-ubuntu text-blue-600 text-xl">Need For Speed</h1>
+      <h2 class="text-sm font-ubuntu">Publisher: EA Sports</h2>
+      <h3 class="text-xs font-nunito">Released: 21-06-2021</h3>
     </div>
-    <div class="h-fit flex justify-center">
+    <div class="text-center">
+      <v-rating
+        v-model="rating"
+        hover
+        half-increments
+        color="yellow"></v-rating>
+    </div>
+    <div class="h-fit w-full flex justify-center">
       <v-btn
         :ripple="false"
         elevation="0"
         rounded="6"
-        append-icon="mdi-cart-plus">
-        Add to Cart
+        append-icon="mdi-basket-plus"
+        variant="outlined"
+        color="primary">
+        Add to Basket
       </v-btn>
     </div>
   </div>
 </template>
 
 <script lang="js">
+import { ref } from 'vue';
+
 export default {
     name: "ProductDisplayComp",
     setup() {
+      const rating = ref(3.5);
+      const imageLoading = ref(true);
 
+      function  imageLoadingCallback() {
+        console.log("image loaded...");
+        imageLoading.value = false;
+      }
+
+      return {
+        rating, imageLoading, imageLoadingCallback
+      }
     }
 }
 </script>
