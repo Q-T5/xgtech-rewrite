@@ -1,12 +1,12 @@
 <template>
-  <div class="w-[20%] bg-surface shadow-md rounded-md space-y-2 relative pb-1">
+  <div class="h-fit w-full bg-surface shadow-md rounded-md space-y-2 relative pb-1">
     <img
       src="https://files.fm/thumb_show.php?i=dgrqyep4s"
       alt="product-image"
-      class="h-[10.5rem] w-full object-cover rounded-t-md shadow-md"
+      class="h-[12rem] w-full object-cover rounded-t-md shadow-md"
       @load="imageLoadingCallback" />
     <div
-      class="h-[10.5rem] w-full flex justify-center items-center absolute rounded-t-md shadow-md -top-2"
+      class="h-[12rem] w-full flex justify-center items-center absolute rounded-t-md shadow-md -top-2"
       v-if="imageLoading">
       <v-progress-circular
         indeterminate
