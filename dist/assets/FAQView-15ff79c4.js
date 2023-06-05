@@ -1,0 +1,1 @@
+import{U as n,_ as e,r as t,o as r,c as s}from"./index-0e9ebc0a.js";const c={name:"FAQView",components:{UnderConstruction:n}};function a(p,_,i,d,m,u){const o=t("UnderConstruction");return r(),s(o)}const l=e(c,[["render",a]]);export{l as default};
