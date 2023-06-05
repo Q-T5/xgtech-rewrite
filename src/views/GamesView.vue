@@ -76,7 +76,7 @@
         size="large"
         color="primary"
         append-icon="mdi-cart"
-        @click="addItemToCart(cartItem)"
+        @click="addToCart"
         >Add To Cart</v-btn
       >
     </div>
@@ -119,8 +119,13 @@ export default {
       itemSelectorOpen.value = true
     }
 
+    function addToCart() {
+      addItemToCart(cartItem);
+      itemSelectorOpen.value = false;
+    }
+
     return {
-      itemSelectorOpen, addItemToCart, itemQuantity, cartItem, preAddToCart, computedGames
+      itemSelectorOpen, addItemToCart, itemQuantity, cartItem, preAddToCart, computedGames, addToCart
     }
   }
 }
