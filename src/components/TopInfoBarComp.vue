@@ -7,20 +7,20 @@
 <script lang="js">
 import { ref } from 'vue';
 export default {
-    name: "TopInfoBarComp",
-    props: {
-        title: {
-            required: true,
-            default: "Generic Component Title",
-            type: String
-        }
-    },
-    setup(props) {
-           const title = ref(props.title);
-
-           return {
-               title
-           }
+  name: "TopInfoBarComp",
+  props: {
+    title: {
+      required: true,
+      default: "Generic Component Title",
+      type: String
     }
+  },
+  setup(props) {
+    const title = ref(props.title);
+
+    return {
+      title
+    }
+  }
 }
 </script>
