@@ -100,6 +100,7 @@
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import useShoppingCartStore from '../stores/shoppingcart-store';
+import { storeToRefs } from 'pinia';
 
 export default {
   name: "TopNavbarComp",
@@ -125,7 +126,7 @@ export default {
     const route = useRoute();
     const drawer = ref(false);
     const router =  useRouter();
-    const { cartTotal } = useShoppingCartStore();
+    const { cartTotal } = storeToRefs(useShoppingCartStore());
 
     function openLogin() {
       // close the navigation drawer first
