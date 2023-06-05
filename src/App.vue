@@ -1,5 +1,7 @@
 <template>
-  <TopNavbarComp @open-login="displayLogin = true" />
+  <TopNavbarComp
+    @open-login="displayLogin = true"
+    @open-chekout="displayCheckout = true" />
   <main class="relative">
     <router-view v-slot="{ Component }">
       <keep-alive>
@@ -12,11 +14,13 @@
       density="default"
       icon="mdi-chat"
       size="small"></v-btn>
-    <v-btn
-      density="default"
-      icon="mdi-cart"></v-btn>
   </div>
-  <LoginComp v-if="displayLogin"  @close-login="displayLogin = false" />
+  <LoginComp
+    v-if="displayLogin"
+    @close-login="displayLogin = false" />
+  <CheckoutComp
+    v-if="displayCheckout"
+    @close-checkout="displayCheckout = false" />
 
   <!-- Teleported components -->
   <teleport to="#notification-zone">
@@ -38,6 +42,7 @@ import NotificationComp from './components/NotificationComp.vue';
 import useNotificationStore from './stores/notification-store';
 import LoginComp from './components/LoginComp.vue';
 import { ref } from 'vue';
+import CheckoutComp from './components/CheckoutComp.vue';
 
 export default {
   name: 'App',
@@ -46,11 +51,13 @@ export default {
     RouterView,
     NotificationComp,
     LoginComp,
+    CheckoutComp,
   },
   setup() {
     const theme = useTheme();
     const { notificationActive } = useNotificationStore();
     const displayLogin = ref(false);
+    const displayCheckout = ref(false);
 
     function toggleTheme() {
       if (theme.global.name.value === 'customDark') {
@@ -63,7 +70,8 @@ export default {
     return {
       toggleTheme,
       notificationActive,
-      displayLogin
+      displayLogin,
+      displayCheckout,
     };
   },
 };
