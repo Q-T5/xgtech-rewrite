@@ -4,7 +4,11 @@ import { ref, computed } from 'vue';
 const useShoppingCartStore = defineStore('ShoppingCartStore', () => {
   const shoppingCartItems = ref([]);
   const cartTotal = computed(() => {
-    shoppingCartItems.value.length;
+    return shoppingCartItems.value.length;
+  });
+
+  const cartItems = computed(() => {
+    return shoppingCartItems.value;
   });
 
   function addItemToCart(item) {
@@ -24,6 +28,7 @@ const useShoppingCartStore = defineStore('ShoppingCartStore', () => {
     addItemToCart,
     removeItemFromCart,
     cartTotal,
+    cartItems,
   };
 });
 
