@@ -1,5 +1,4 @@
 import { computed } from 'vue';
-import { ref } from 'vue';
 
 export default function useServicesComposable() {
   const servicesOffered = [
