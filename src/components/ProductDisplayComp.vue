@@ -32,7 +32,8 @@
         rounded="6"
         append-icon="mdi-basket-plus"
         variant="outlined"
-        color="primary">
+        color="primary"
+        @click="openItemSelector">
         Add to Basket
       </v-btn>
     </div>
@@ -71,7 +72,7 @@ export default {
         type: String
       }
     },
-    setup(props) {
+    setup(props, {emit}) {
       const rating = ref(props.rating);
       const imageLoading = ref(true);
 
@@ -79,8 +80,12 @@ export default {
         imageLoading.value = false;
       }
 
+      function openItemSelector() {
+        emit("open-item-selector");
+      }
+
       return {
-        rating, imageLoading, imageLoadingCallback, props
+        rating, imageLoading, imageLoadingCallback, props, openItemSelector
       }
     }
 }
