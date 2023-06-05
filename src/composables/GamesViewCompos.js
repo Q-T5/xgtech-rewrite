@@ -42,6 +42,14 @@ export default function useGamesComposable() {
       release: '14-02-2023',
       rating: 4.5,
     },
+    {
+      gameTitle: "No Man's Sky",
+      gamePublisher: 'Hello Games & Sony Entertainment',
+      gameCost: '7500',
+      gamePoster: 'https://files.fm/thumb_show.php?i=ek5d5ykxa',
+      release: '09-08-2016',
+      rating: 3.5,
+    },
   ];
 
   function getGameFromList(index) {
