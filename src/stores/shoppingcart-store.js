@@ -3,8 +3,15 @@ import { ref, computed } from 'vue';
 
 const useShoppingCartStore = defineStore('ShoppingCartStore', () => {
   const shoppingCartItems = ref([]);
-  const cartTotal = computed(() => {
-    return shoppingCartItems.value.length;
+  const cartTotal = ref(0);
+
+  const totalCost = computed(() => {
+    let cost = 0;
+    shoppingCartItems.value.forEach((cartItem) => {
+      cost += cartItem.gameCost * cartItem.itemQuantity;
+    });
+
+    return cost;
   });
 
   const cartItems = computed(() => {
@@ -13,14 +20,15 @@ const useShoppingCartStore = defineStore('ShoppingCartStore', () => {
 
   function addItemToCart(item) {
     shoppingCartItems.value.push(item);
+    cartTotal.value++;
     console.log(
       `Shopping cart now: ${JSON.stringify(shoppingCartItems.value)}`,
     );
-    console.log(`Cart total: ${cartTotal.value}`);
   }
 
   function removeItemFromCart(index) {
     shoppingCartItems.value.splice(index, 1);
+    cartTotal.value--;
   }
 
   return {
@@ -29,6 +37,7 @@ const useShoppingCartStore = defineStore('ShoppingCartStore', () => {
     removeItemFromCart,
     cartTotal,
     cartItems,
+    totalCost,
   };
 });
 
