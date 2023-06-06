@@ -14,7 +14,9 @@
         color="primary"></v-progress-circular>
     </div>
     <div class="pl-1 rounded-md space-y-1">
-      <h1 class="font-ubuntu text-blue-600 text-xl truncate">{{ props.title }}</h1>
+      <h1 class="font-ubuntu text-blue-600 text-xl truncate">
+        {{ props.title }}
+      </h1>
       <h2 class="font-ubuntu truncate">Publisher: {{ props.publisher }}</h2>
       <h3 class="font-nunito">Cost: {{ props.cost }}Ksh</h3>
       <h4 class="text-sm font-nunito">Released: {{ props.release }}</h4>
@@ -34,7 +36,11 @@
         append-icon="mdi-basket-plus"
         variant="outlined"
         color="primary"
-        @click="openItemSelector">
+        @click="
+          () => {
+            emit('add-to-cart');
+          }
+        ">
         Add to Basket
       </v-btn>
     </div>
@@ -86,12 +92,8 @@ export default {
         imageLoading.value = false;
       }
 
-      function openItemSelector() {
-        emit("open-item-selector");
-      }
-
       return {
-        rating, imageLoading, imageLoadingCallback, props, openItemSelector
+        rating, imageLoading, imageLoadingCallback, props, emit
       }
     }
 }
