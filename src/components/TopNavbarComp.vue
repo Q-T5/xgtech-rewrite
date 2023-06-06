@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="p-2 z-10 bg-surface flex border-b-primary fixed top-0 w-full shadow-sm border-b-[0.5px] items-center justify-between">
+    class="p-2 z-10 bg-surface flex border-b-primary fixed top-0 w-full shadow-sm border-b-[0.5px] items-center justify-around">
     <div class="flex items-center">
       <img
         src="../assets/xgamer-logo.svg"
@@ -31,7 +31,9 @@
           @click="openCheckout"></v-btn>
       </div>
     </div>
-    <v-card>
+  </nav>
+  <nav class="fixed z-10">
+    <v-card class="bg-red-500">
       <v-layout>
         <v-navigation-drawer v-model="drawer">
           <div class="flex justify-end">
