@@ -1,7 +1,7 @@
 <template>
   <div
     class="p-2 w-full fixed h-screen top-0 backdrop-blur z-30 backdrop-brightness-50 flex justify-end">
-    <div class="w-[45%] h-full bg-surface flex flex-col justify-end relative">
+    <div class="w-[35%] h-full bg-surface flex flex-col justify-end relative">
       <h1
         class="absolute top-2 right-2 bg-primary p-2 w-fit rounded-full font-nunito text-lg">
         Total: {{ totalCost }}Ksh
@@ -17,9 +17,9 @@
             alt="item-image"
             class="object-cover w-48 rounded-md" />
           <div class="ml-2">
-            <h1 class="font-nunito text-xl">Item: {{ item.gameName }}</h1>
-            <h3 class="font-nunito text-lg">Price: {{ item.gameCost }}Ksh</h3>
-            <h3 class="font-nunito text-base">
+            <h1 class="font-nunito text-lg">Item: {{ item.gameName }}</h1>
+            <h3 class="font-nunito">Price: {{ item.gameCost }}Ksh</h3>
+            <h3 class="font-nunito">
               Quantity: {{ item.itemQuantity }}
             </h3>
           </div>
