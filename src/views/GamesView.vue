@@ -10,6 +10,7 @@
         :release="game.release"
         :rating="game.rating"
         :poster="game.gamePoster"
+        :cost="game.gameCost"
         @open-item-selector="preAddToCart(index)" />
     </div>
   </OptionalSlot>
