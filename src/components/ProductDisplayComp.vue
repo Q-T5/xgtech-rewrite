@@ -14,9 +14,10 @@
         color="primary"></v-progress-circular>
     </div>
     <div class="pl-1 rounded-md space-y-1">
-      <h1 class="font-ubuntu text-blue-600 text-xl">{{ props.title }}</h1>
-      <h2 class="text-sm font-ubuntu">Publisher: {{ props.publisher }}</h2>
-      <h3 class="text-xs font-nunito">Released: {{ props.release }}</h3>
+      <h1 class="font-ubuntu text-blue-600 text-xl truncate">{{ props.title }}</h1>
+      <h2 class="font-ubuntu truncate">Publisher: {{ props.publisher }}</h2>
+      <h3 class="font-nunito">Cost: {{ props.cost }}Ksh</h3>
+      <h4 class="text-sm font-nunito">Released: {{ props.release }}</h4>
     </div>
     <div class="text-center">
       <v-rating
@@ -70,6 +71,11 @@ export default {
         required: true,
         default: "https://files.fm/thumb_show.php?i=dgrqyep4s",
         type: String
+      },
+      cost: {
+        required: true,
+        default: 2000,
+        type: Number
       }
     },
     setup(props, {emit}) {
