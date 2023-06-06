@@ -11,19 +11,42 @@
         <div
           v-for="(item, index) in cartItems"
           :key="index"
-          class="flex p-2 rounded-md shadow-md m-1 bg-background h-fit items-center relative">
-          <img
-            :src="item.gameImage"
-            alt="item-image"
-            class="object-cover w-48 rounded-md" />
-          <div class="ml-2">
-            <h1 class="font-nunito text-lg">Item: {{ item.gameName }}</h1>
-            <h3 class="font-nunito">Price: {{ item.gameCost }}Ksh</h3>
-            <h3 class="font-nunito">
-              Quantity: {{ item.itemQuantity }}
-            </h3>
+          class="flex flex-col rounded-md shadow-md m-1 bg-background h-fit relative p-2">
+          <div class="flex w-full items-center space-x-2">
+            <img
+              :src="item.gameImage"
+              alt="item-image"
+              class="object-cover w-48 rounded-md" />
+            <div>
+              <h1 class="font-nunito text-lg truncate">
+                Item: {{ item.gameName }}
+              </h1>
+              <h3 class="font-nunito">Price: {{ item.gameCost }}Ksh</h3>
+              <h3 class="font-nunito" v-if="false">Quantity: {{ item.itemQuantity }}</h3>
+            </div>
           </div>
-          <div class="absolute bottom-2 right-2">
+          <v-expansion-panels
+            variant="popout"
+            class="my-2"
+            v-if="false">
+            <v-expansion-panel>
+              <v-expansion-panel-title class="font-nunito"
+                >Custom Product Message</v-expansion-panel-title
+              >
+              <v-expansion-panel-text>
+                <v-textarea
+                  counter
+                  label="Any Special Instructions for This Product?"
+                  variant="underlined"
+                  prepend-icon="mdi-message"
+                  class="font-nunito"
+                  :model-value="
+                    shoppingCartItems[index].customMessage
+                  "></v-textarea>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <div class="absolute top-2 right-2 z-20">
             <v-btn
               icon="mdi-trash-can"
               color="primary"
@@ -71,10 +94,10 @@ export default {
     TopInfoBarComp
   },
   setup(props, { emit }) {
-    const { cartItems, totalCost } = storeToRefs(useShoppingCartStore());
+    const { cartItems, totalCost, shoppingCartItems } = storeToRefs(useShoppingCartStore());
     const { removeItemFromCart } = useShoppingCartStore();
     return {
-      emit, cartItems, removeItemFromCart, totalCost
+      emit, cartItems, removeItemFromCart, totalCost, shoppingCartItems
     }
   }
 }
